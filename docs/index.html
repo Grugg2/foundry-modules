@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101820">
+  <meta name="description" content="Small, focused tools for Foundry VTT game masters. Meet GM Deck, an early-access tabletop control panel.">
+  <title>Foundry Modules — tools for the table</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Foundry Modules home"><span class="brand-mark" aria-hidden="true">✦</span><span>TABLE<span class="brand-light">TOOLS</span></span></a>
+    <nav aria-label="Main navigation"><a href="#modules">Modules</a><a href="#install">Install</a><a href="https://github.com/Grugg2/foundry-modules/issues">Issues <span aria-hidden="true">↗</span></a></nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-line"></span> Independent tools for Foundry VTT</p>
+        <h1 id="hero-title">Less juggling.<br><em>More game.</em></h1>
+        <p class="hero-lede">A growing collection of small, practical tools for the person behind the screen. Built for smoother sessions and fewer trips through menus.</p>
+        <a class="button button-amber" href="#modules">Explore the modules <span aria-hidden="true">↓</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="seal"><span class="seal-star">✦</span><span class="seal-rule"></span><span class="seal-caption">AT THE<br>TABLE</span></div>
+        <span class="art-note note-top">TOOLS FOR THE GM</span><span class="art-note note-bottom">EST. BETWEEN SESSIONS · 2026</span>
+      </div>
+      <div class="hero-index"><span>01</span><span class="index-rule"></span><span>THE TOOLBOX</span></div>
+    </section>
+
+    <section class="modules section-wrap" id="modules" aria-labelledby="modules-title">
+      <div class="section-heading"><div><p class="eyebrow">The collection</p><h2 id="modules-title">Tools for the table</h2></div><p class="section-intro">Focused utilities, made to stay out of the way until you need them.</p></div>
+
+      <article class="module-card" id="gm-deck" aria-labelledby="deck-title">
+        <div class="module-main">
+          <div class="module-title-row"><div><p class="module-kicker">01 / GAME MASTER TOOL</p><h3 id="deck-title">GM Deck</h3></div><span class="status-pill"><span></span> ALPHA · 0.1.0</span></div>
+          <p class="module-description">A compact control deck for the little things that keep a session moving: room sound, world atmosphere, quick rolls, faces, and notes.</p>
+          <div class="module-tags"><span>Foundry VTT 14 target</span><span>GM-only interface</span><span>No audio included</span></div>
+          <a class="text-link" href="#install">Installation instructions <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="preview-wrap">
+          <p class="preview-label">INTERFACE CONCEPT <span>ILLUSTRATION · NOT A SCREENSHOT</span></p>
+          <div class="deck-preview" aria-label="Illustrative interactive mockup of the GM Deck interface">
+            <div class="deck-top"><span class="deck-brand"><span>✦</span> GM DECK</span><span class="live-dot">LOCAL</span></div>
+            <div class="deck-tabs" role="tablist" aria-label="Illustration sections">
+              <button type="button" role="tab" id="tab-sound" aria-selected="true" aria-controls="panel-sound" data-tab="sound">Sound</button>
+              <button type="button" role="tab" id="tab-world" aria-selected="false" aria-controls="panel-world" data-tab="world" tabindex="-1">World</button>
+              <button type="button" role="tab" id="tab-tables" aria-selected="false" aria-controls="panel-tables" data-tab="tables" tabindex="-1">Tables</button>
+              <button type="button" role="tab" id="tab-people" aria-selected="false" aria-controls="panel-people" data-tab="people" tabindex="-1">People</button>
+              <button type="button" role="tab" id="tab-lore" aria-selected="false" aria-controls="panel-lore" data-tab="lore" tabindex="-1">Lore</button>
+            </div>
+            <div class="deck-content">
+              <section class="deck-panel" role="tabpanel" id="panel-sound" aria-labelledby="tab-sound" data-panel="sound"><div class="panel-title"><span>01</span><h4>Soundboard</h4></div><p class="deck-hint">LOCAL SOUND FOLDERS</p><div class="sound-row"><span class="sound-icon">♫</span><span><b>Rain on canvas</b><small>Ambience · loop</small></span><span class="play-icon">▶</span></div><div class="sound-row"><span class="sound-icon">♫</span><span><b>Low fire crackle</b><small>Ambience · layer</small></span><span class="play-icon">▶</span></div><div class="deck-foot">PITCH <span>−</span><i><b></b></i><span>+</span><strong>0%</strong></div></section>
+              <section class="deck-panel" role="tabpanel" id="panel-world" aria-labelledby="tab-world" data-panel="world" hidden><div class="panel-title"><span>02</span><h4>World mood</h4></div><p class="deck-hint">ILLUSTRATIVE CONTROLS</p><div class="world-card"><span>◷</span><div><small>WORLD TIME</small><b>Late evening</b></div><span class="world-arrow">↗</span></div><div class="world-card"><span>☼</span><div><small>WEATHER</small><b>Overcast</b></div><span class="world-arrow">↗</span></div><p class="deck-note">Built-in game time, weather &amp; daylight.</p></section>
+              <section class="deck-panel" role="tabpanel" id="panel-tables" aria-labelledby="tab-tables" data-panel="tables" hidden><div class="panel-title"><span>03</span><h4>Quick tables</h4></div><p class="deck-hint">WORLD &amp; COMPENDIUM</p><div class="search-box"><span>⌕</span> Search roll tables…</div><div class="table-row"><b>Roadside encounters</b><span>WORLD</span></div><div class="table-row"><b>Odd curiosities</b><span>PACK</span></div><p class="deck-note">Find a table, then roll it.</p></section>
+              <section class="deck-panel" role="tabpanel" id="panel-people" aria-labelledby="tab-people" data-panel="people" hidden><div class="panel-title"><span>04</span><h4>People &amp; creatures</h4></div><p class="deck-hint">CREATURE COMPENDIUM</p><div class="search-box"><span>⌕</span> Name or challenge rating…</div><div class="creature-card"><span class="creature-sigil">♟</span><span><b>Quick encounter</b><small>Search · import · token</small></span></div><button class="illustration-action" type="button" disabled>Pick a random creature</button><p class="deck-note">NPC ideas only. Not a statblock builder.</p></section>
+              <section class="deck-panel" role="tabpanel" id="panel-lore" aria-labelledby="tab-lore" data-panel="lore" hidden><div class="panel-title"><span>05</span><h4>Session notes</h4></div><p class="deck-hint">JOURNALS &amp; LOG</p><div class="search-box"><span>⌕</span> Search journals…</div><div class="note-card"><small>SESSION LOG · TODAY</small><p>The old road bends east, into the pines…</p><span>ILLUSTRATIVE TEXT</span></div><p class="deck-note">Find a journal or jot a session note.</p></section>
+            </div>
+          </div>
+          <p class="preview-caption">A visual sketch of the planned interface. These controls do not operate Foundry.</p>
+        </div>
+      </article>
+      <aside class="alpha-notice" aria-label="Alpha testing notice"><span class="notice-mark">!</span><p><strong>Early alpha · syntax checked only</strong><br>GM Deck has not been run in Foundry. Treat it as experimental and try it only in a disposable test world. No bundled audio files are included.</p></aside>
+
+      <article class="upcoming-card">
+        <div class="upcoming-mark" aria-hidden="true">↔</div><div><p class="module-kicker">IN DEVELOPMENT</p><h3>PCGen ↔ Foundry PF1 bridge</h3><p>A planned Pathfinder 1e character sync module. The development harness exists; there is no working sync yet.</p></div><span class="planned-pill">PLANNED</span>
+      </article>
+    </section>
+
+    <section class="details section-wrap" aria-label="GM Deck details">
+      <div class="detail-block"><p class="eyebrow">A small deck</p><h2>Session flow,<br><em>within reach.</em></h2><p>GM-only tools gathered in one place, with a light touch on your world.</p></div>
+      <div class="detail-list">
+        <article><span class="detail-number">01</span><div><h3>Set the sound</h3><p>Play from your own sound folders. Tune pitch by ±12%, shift playback locally, loop a sound, layer ambience, or pick a random one-shot.</p></div></article>
+        <article><span class="detail-number">02</span><div><h3>Shape the scene</h3><p>Reach built-in world time, weather, and daylight controls from a single panel.</p></div></article>
+        <article><span class="detail-number">03</span><div><h3>Find the next beat</h3><p>Search world or compendium roll tables, creature compendiums, and journals. Keep a simple session log.</p></div></article>
+        <p class="player-note"><span aria-hidden="true">◉</span> GM controls are for the GM; players hear sounds played by the GM. For music, keep pitch at 0%.</p>
+      </div>
+    </section>
+
+    <section class="boundaries section-wrap" aria-labelledby="boundaries-title"><div><p class="eyebrow">On the roadmap</p><h2 id="boundaries-title">Room to grow.</h2></div><div class="roadmap-grid"><article><span>01</span><h3>Map generator</h3><p>Not part of this release.</p></article><article><span>02</span><h3>Full PF1 character builder</h3><p>Class and gear statblocks are out of scope.</p></article><article><span>03</span><h3>Custom calendar</h3><p>Holidays and moons are future ideas.</p></article></div></section>
+
+    <section class="install section-wrap" id="install" aria-labelledby="install-title">
+      <div class="install-heading"><p class="eyebrow">Try it in a test world</p><h2 id="install-title">Install GM Deck</h2><p>Use the manifest URL in Foundry’s module installer. Enable GM Deck only in a disposable test world while this alpha remains untested in Foundry.</p></div>
+      <div class="install-panel"><p class="install-kicker">MANIFEST URL</p><div class="copy-row"><code id="manifest-url">https://grugg2.github.io/foundry-modules/modules/gm-deck/module.json</code><button class="copy-button" id="copy-manifest" type="button" aria-describedby="copy-status">Copy URL</button></div><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p>
+        <ol class="install-steps"><li><span>1</span><p>In Foundry, open <b>Add-on Modules → Install Module</b>.</p></li><li><span>2</span><p>Paste the manifest URL and choose <b>Install</b>.</p></li><li><span>3</span><p>Enable GM Deck in a disposable test world. Open it with <kbd>Shift</kbd> + <kbd>G</kbd> or the d20 token tools.</p></li></ol>
+        <div class="download-row"><span>Prefer a package?</span><a href="downloads/gm-deck-0.1.0.zip" download>Download GM Deck 0.1.0 <span aria-hidden="true">↓</span></a></div>
+      </div>
+    </section>
+
+    <section class="feedback section-wrap"><div><p class="eyebrow">Found an issue?</p><h2>Help shape the next build.</h2></div><a class="button button-outline" href="https://github.com/Grugg2/foundry-modules/issues">Open an issue <span aria-hidden="true">↗</span></a></section>
+  </main>
+
+  <footer class="footer"><a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">✦</span><span>TABLE<span class="brand-light">TOOLS</span></span></a><p>Made for the people behind the screen.</p><div><a href="https://github.com/Grugg2/foundry-modules">Source on GitHub ↗</a><span>© 2026 Frej · Grugg2</span></div></footer>
+</body>
+</html>

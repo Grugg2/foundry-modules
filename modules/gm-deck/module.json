@@ -1,0 +1,26 @@
+{
+  "id": "gm-deck",
+  "title": "GM Deck",
+  "description": "One window for running the table: soundboard with random pitch, layered ambience, calendar and weather, random tables, creature pull from compendiums, and lore search with a session log.",
+  "version": "0.1.0",
+  "authors": [
+    {
+      "name": "Frej"
+    }
+  ],
+  "compatibility": {
+    "minimum": "14",
+    "maximum": "14"
+  },
+  "esmodules": [
+    "scripts/main.mjs"
+  ],
+  "styles": [
+    "styles/gm-deck.css"
+  ],
+  "socket": true,
+  "url": "https://grugg2.github.io/foundry-modules/#gm-deck",
+  "manifest": "https://grugg2.github.io/foundry-modules/modules/gm-deck/module.json",
+  "download": "https://grugg2.github.io/foundry-modules/downloads/gm-deck-0.1.0.zip",
+  "bugs": "https://github.com/Grugg2/foundry-modules/issues"
+}
