@@ -1,4 +1,4 @@
-/* GM Deck 0.1.0: one window for running the table. Written for Foundry v14 + PF1 (works system-agnostic except CR). */
+/* GM Deck 0.1.1: one window for running the table. Written for Foundry v14 + PF1 (works system-agnostic except CR). */
 const ID = "gm-deck";
 const AUDIO = /\.(mp3|ogg|oga|wav|flac|webm|m4a|opus)$/i;
 const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]);
@@ -199,7 +199,7 @@ class GMDeck extends foundry.applications.api.ApplicationV2 {
     window: { title: "GM Deck", icon: "fa-solid fa-dice-d20", resizable: true },
     position: { width: 440, height: 660 },
     actions: {
-      tab(_e, t) { this.tab = t.dataset.tab; this.render(); },
+      gdTab(_e, t) { this.view = t.dataset.view; this.render(); },
       stopAll() { send({ t: "stopAll" }); for (const n of [...moods.keys()]) stopMood(n); this.render(); },
       refresh() { browseCache.clear(); this.tables = this.actors = null; this.render(); },
       async mood(_e, t) { moods.has(t.dataset.name) ? await stopMood(t.dataset.name) : await startMood(t.dataset.name, t.dataset.path); this.render(); },
@@ -235,7 +235,7 @@ class GMDeck extends foundry.applications.api.ApplicationV2 {
     },
   };
 
-  tab = "sound";
+  view = "sound";
   soundDir = null;
   q = { tables: "", people: "", lore: "" };
   cr = { min: "", max: "" };
@@ -244,8 +244,8 @@ class GMDeck extends foundry.applications.api.ApplicationV2 {
   idea = npcIdea();
 
   async _renderHTML() {
-    const tabs = TABS.map(([k, l]) => `<button type="button" data-action="tab" data-tab="${k}" class="${k === this.tab ? "on" : ""}">${l}</button>`).join("");
-    const body = await this[`_${this.tab}`]();
+    const tabs = TABS.map(([k, l]) => `<button type="button" data-action="gdTab" data-view="${k}" class="${k === this.view ? "on" : ""}">${l}</button>`).join("");
+    const body = await this[`_${this.view}`]();
     return `<nav class="gd-tabs">${tabs}</nav><section class="gd-body">${body}</section>`;
   }
 
@@ -258,7 +258,7 @@ class GMDeck extends foundry.applications.api.ApplicationV2 {
         await set(i.dataset.setting, i.type === "checkbox" ? i.checked : i.type === "range" ? Number(i.value) : i.value);
       });
     }
-    el.querySelector("[data-search]")?.addEventListener("input", (e) => { this.q[this.tab] = e.target.value; this.fill(); });
+    el.querySelector("[data-search]")?.addEventListener("input", (e) => { this.q[this.view] = e.target.value; this.fill(); });
     for (const i of el.querySelectorAll("[data-cr]")) i.addEventListener("change", () => { this.cr[i.dataset.cr] = i.value; this.fill(); });
     el.querySelector("[data-dark]")?.addEventListener("change", (e) => canvas.scene?.update({ "environment.darknessLevel": Number(e.target.value) }, { animateDarkness: 1500 }));
     // Right-click a soundboard button to loop it; right-click again to stop.
@@ -283,7 +283,7 @@ class GMDeck extends foundry.applications.api.ApplicationV2 {
   /** Re-draw only the result list so the search box keeps focus. */
   fill() {
     const box = this.element.querySelector(".gd-results");
-    if (box) box.innerHTML = this[`_${this.tab}Results`]();
+    if (box) box.innerHTML = this[`_${this.view}Results`]();
   }
 
   /* ---- Sound ---- */
@@ -465,5 +465,5 @@ Hooks.on("getSceneControlButtons", (controls) => {
   tools.gmDeck = { name: "gmDeck", title: "GM Deck (Shift+G)", icon: "fa-solid fa-dice-d20", order: Object.keys(tools).length, button: true, visible: game.user.isGM, onChange: () => toggleDeck() };
 });
 
-Hooks.on("updateWorldTime", () => { if (deck?.tab === "world") deck.render(); });
-Hooks.on("canvasReady", () => { if (deck?.tab === "world") deck.render(); });
+Hooks.on("updateWorldTime", () => { if (deck?.view === "world") deck.render(); });
+Hooks.on("canvasReady", () => { if (deck?.view === "world") deck.render(); });

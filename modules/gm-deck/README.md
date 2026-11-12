@@ -15,7 +15,7 @@ Players only hear the sounds. The window is GM-only.
 
 ## Status
 
-Version 0.1.0 alpha. JavaScript syntax checked only; **never run in Foundry yet**. Targets Foundry v14; Pathfinder 1e and other system compatibility are unverified. Most controls aim to use core APIs; the creature CR filter is PF1-specific. Test in a disposable world first.
+Version 0.1.1 alpha. Smoke-tested once in a Foundry 14.361 test world (window, tabs, time, weather, table roll, creature import, journal log); sound playback and multiplayer are untested. Targets Foundry v14; Pathfinder 1e and other system compatibility are unverified. Most controls aim to use core APIs; the creature CR filter is PF1-specific. Test in a disposable world first.
 
 ## Folder layout for sound
 

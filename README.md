@@ -4,9 +4,9 @@ Small tools for running the table in Foundry Virtual Tabletop.
 
 - **[Module page](https://grugg2.github.io/foundry-modules/)**
 - **[GM Deck installation manifest](https://grugg2.github.io/foundry-modules/modules/gm-deck/module.json)**
-- **[GM Deck 0.1.0 ZIP](https://grugg2.github.io/foundry-modules/downloads/gm-deck-0.1.0.zip)**
+- **[GM Deck 0.1.1 ZIP](https://grugg2.github.io/foundry-modules/downloads/gm-deck-0.1.1.zip)**
 
-## GM Deck — 0.1.0 alpha
+## GM Deck — 0.1.1 alpha
 
 A GM-only window with Sound, World, Tables, People, and Lore tabs. Target: Foundry
 VTT v14. The JavaScript passes a syntax check; the module **has not been run in
